@@ -21,7 +21,7 @@ cp -a .opencode "$TARGET/"
 If `$TARGET` already has `opencode.json` / `opencode.jsonc`, **merge** rather than overwrite:
 
 - Set `"default_agent": "swe"`
-- Append the three `.opencode/instructions/*.md` paths to `instructions`
+- Append all `.opencode/instructions/*.md` paths to `instructions` (protocol, delegation, verification, definition-of-done, risk-tiers, change-discipline)
 - Keep any existing provider/model settings
 
 Then:

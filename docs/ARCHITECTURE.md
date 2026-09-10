@@ -75,6 +75,13 @@ Full matrix: `.opencode/instructions/delegation.md`.
 Hierarchy: syntax → types → lint → unit → integration → e2e → build → **diff review**.  
 Run the relevant slice; report honestly. Details: `.opencode/instructions/verification.md`.
 
+## Quality gates
+
+- **Risk tiers T0–T4** scale planning/review (`risk-tiers.md`).
+- **Definition of Done** blocks undeserved success (`definition-of-done.md`).
+- **Change discipline** keeps diffs surgical (`change-discipline.md`).
+- Canonical narrative: `docs/SWE-STANDARD.md`.
+
 ## Error recovery
 
 1. Read the exact error  

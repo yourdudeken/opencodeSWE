@@ -2,16 +2,18 @@
 
 A production-grade agent/skills architecture for [OpenCode](https://opencode.ai) that behaves like a senior software engineer with a small specialist team — not a pile of chatbot personas.
 
+**Standard:** [docs/SWE-STANDARD.md](docs/SWE-STANDARD.md) — Definition of Done, risk tiers T0–T4, change discipline.
+
 ## What you get
 
 | Layer | Contents |
 |-------|----------|
-| **Primary agent** | `swe` — orchestrates understand → inspect → plan → implement → verify → review |
+| **Primary agent** | `swe` — orchestrates understand → inspect → plan → implement → verify → review → **DoD** |
 | **Specialists** | 11 focused subagents (explore, plan, debug, test, review, architect, security, performance, git, deps, docs) |
-| **Skills** | 14 operational skills with when/when-not, procedure, failure modes, verification |
-| **Protocols** | Task state, delegation rules, verification hierarchy, specialist I/O contract |
-| **Commands** | `/swe-fix`, `/swe-feature`, `/swe-review`, `/swe-explore`, `/swe-ci` |
-| **Workflows** | Bug fix, feature, refactor, CI failure |
+| **Skills** | 23 operational skills (repo intel, FE/BE/API/fullstack, debug, verify, quality, git/PR) |
+| **Protocols** | Task state, delegation, verification, **DoD**, **risk tiers**, change discipline |
+| **Commands** | `/swe-fix`, `/swe-feature`, `/swe-refactor`, `/swe-deps`, `/swe-review`, `/swe-explore`, `/swe-ci`, `/swe-pr` |
+| **Workflows** | Bug, feature, refactor, fullstack, CI, deps, PR |
 
 ## Requirements
 
@@ -72,17 +74,22 @@ Useful slash commands inside the TUI:
 
 - `/swe-fix <error or symptom>`
 - `/swe-feature <request>`
+- `/swe-refactor <goal>`
+- `/swe-deps <package/version>`
 - `/swe-review`
 - `/swe-explore <area>`
 - `/swe-ci <log excerpt>`
+- `/swe-pr` — package for review (commit/PR only if you ask)
 
 ## Design principles
 
 1. **Orchestrator owns the outcome** — specialists return evidence, not commandments.
 2. **Do not over-delegate** — trivial tasks stay on `swe`.
-3. **Skills over prompt soup** — procedures are loadable, composable, and verification-oriented.
-4. **Honest verification** — report commands actually run; never invent green builds.
-5. **Minimal diffs** — match repo conventions; no speculative rewrites.
+3. **Risk-tiered ceremony** — T0 typo ≠ T4 migration; review depth scales with blast radius.
+4. **Definition of Done blocks fake success** — no “done” without applicable gates.
+5. **Skills over prompt soup** — procedures are loadable, composable, and verification-oriented.
+6. **Honest verification** — report commands actually run; never invent green builds.
+7. **Minimal diffs** — match repo conventions; no speculative rewrites.
 
 ## Layout
 
@@ -102,6 +109,7 @@ docs/
 
 ## Docs
 
+- [SWE Standard (quality bar)](docs/SWE-STANDARD.md)
 - [Installation details](docs/INSTALL.md)
 - [Architecture & coordination](docs/ARCHITECTURE.md)
 
