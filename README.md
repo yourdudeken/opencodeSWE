@@ -105,6 +105,7 @@ AGENTS.md                      # ambient project rules for OpenCode
 docs/
   INSTALL.md
   ARCHITECTURE.md
+  SWE-STANDARD.md
 ```
 
 ## Docs
