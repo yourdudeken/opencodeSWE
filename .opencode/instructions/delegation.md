@@ -34,7 +34,7 @@ The `swe` orchestrator owns the task. Specialists assist; they do not replace ju
 | Need | Primary |
 |------|---------|
 | Specs + plans + human approval gates | `swe-plan` |
-| Implement / fix / verify code | `swe` |
+| Implement / fix / verify code | `swe-build` (overseen by `swe`) |
 
 Do not ask `@spec-writer` / `@plan-writer` to edit application source. Do not use `swe-plan` to implement features.
 

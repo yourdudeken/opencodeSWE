@@ -9,7 +9,7 @@ Maximize real SWE performance: correctness, repository understanding, minimal ch
 ```text
         ┌──────────────────────┐     ┌──────────────────────┐
         │  swe-plan (primary)  │     │  swe (primary)       │
-        │  specs → plans gates │────▶│  build + DoD         │
+        │  specs → plans gates │────▶│  master oversight     │
         └──────────┬───────────┘     └──────────┬───────────┘
                    │                            │
      ┌─────────────┼─────────────┐              │
@@ -17,6 +17,13 @@ Maximize real SWE performance: correctness, repository understanding, minimal ch
 spec-writer   plan-writer   repo-explorer   (full specialist set)
      │             │                            │
      └─────────────┴────────────────────────────┘
+                         │ delegates
+                         ▼
+              ┌──────────────────────────────┐
+              │  swe-build (primary)         │
+              │  implementation + verification│
+              └──────────────┬───────────────┘
+                             │
                          Skills (on demand)
 ```
 
@@ -25,7 +32,8 @@ spec-writer   plan-writer   repo-explorer   (full specialist set)
 | Mode | Primary | Writes |
 |------|---------|--------|
 | Plan | `swe-plan` | `specs/**`, `plans/**` only |
-| Build | `swe` | Application source + tests; consumes approved artifacts |
+| Oversight | `swe` | Coordinates all work and owns final DoD/report |
+| Build | `swe-build` | Application source + tests; consumes approved artifacts |
 
 ## Why these agents (not dozens)
 

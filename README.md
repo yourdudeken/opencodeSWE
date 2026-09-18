@@ -7,7 +7,8 @@ workflows.
 
 ## Highlights
 
-- `swe` — default build, fix, and verification agent.
+- `swe` — default master agent overseeing the full SWE workflow.
+- `swe-build` — implementation, testing, and verification agent.
 - `swe-plan` — spec and plan authoring with human approval gates.
 - Specialist agents for exploration, debugging, testing, review, security,
   performance, dependencies, Git, and documentation.
@@ -37,9 +38,10 @@ cd /path/to/your/project
 opencode
 ```
 
-Use `swe` for scoped work. For greenfield or larger changes, switch to
-`swe-plan` (or run `opencode run --agent swe-plan "your prompt"`) to create
-reviewable specs and plans before building.
+Use `swe` for end-to-end orchestration. For implementation work, it routes to
+`swe-build`. For greenfield or larger changes, switch to `swe-plan` (or run
+`opencode run --agent swe-plan "your prompt"`) to create reviewable specs and
+plans before building.
 
 See [Usage](docs/USAGE.md) for the command reference, workflow, and project
 layout.
