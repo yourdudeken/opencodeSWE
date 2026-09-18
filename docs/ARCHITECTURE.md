@@ -133,3 +133,5 @@ Playbooks: `.opencode/workflows/*.md`.
 3. **Wire into orchestrators** — add a row to delegation instructions and optionally a slash command.  
 
 Prefer improving a skill over adding another agent.
+
+For practical command examples and the project layout, see [Usage](USAGE.md).
