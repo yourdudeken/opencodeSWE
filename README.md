@@ -48,13 +48,13 @@ Scoped bugs/features can still use `swe` directly without durable specs.
 From the root of the project where OpenCode SWE should be installed:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourdudeken/opencodeSWE/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/yourdudeken/opencodeSWE/main/scripts/install.sh | bash
 ```
 
 To update an existing installation to the latest release:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourdudeken/opencodeSWE/main/update.sh | bash
+curl -fsSL https://raw.githubusercontent.com/yourdudeken/opencodeSWE/main/scripts/update.sh | bash
 ```
 
 The scripts download the latest GitHub release and copy only `opencode.jsonc`,
