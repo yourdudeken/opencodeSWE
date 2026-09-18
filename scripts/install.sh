@@ -32,9 +32,21 @@ for required_path in opencode.jsonc AGENTS.md .opencode; do
   fi
 done
 
-cp "$temporary_directory/opencode.jsonc" "$target/opencode.jsonc"
-cp "$temporary_directory/AGENTS.md" "$target/AGENTS.md"
-rm -rf "$target/.opencode"
-cp -a "$temporary_directory/.opencode" "$target/.opencode"
+if [[ -e "$target/opencode.json" || -e "$target/opencode.jsonc" ]]; then
+  printf 'Preserving existing OpenCode config in %s.\n' "$target" >&2
+  cp "$temporary_directory/opencode.jsonc" "$target/opencode.swe.jsonc"
+  printf 'Merge the pack settings from %s/opencode.swe.jsonc manually.\n' "$target" >&2
+else
+  cp "$temporary_directory/opencode.jsonc" "$target/opencode.jsonc"
+fi
+
+if [[ -e "$target/AGENTS.md" ]]; then
+  printf 'Preserving existing AGENTS.md in %s.\n' "$target" >&2
+else
+  cp "$temporary_directory/AGENTS.md" "$target/AGENTS.md"
+fi
+
+mkdir -p "$target/.opencode"
+cp -a "$temporary_directory/.opencode/." "$target/.opencode/"
 
 printf 'Installed the latest OpenCode SWE release in %s.\n' "$target"

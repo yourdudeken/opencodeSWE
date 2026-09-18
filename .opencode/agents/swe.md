@@ -83,7 +83,7 @@ delegate or implement → test → verify → review → fix → **DoD** → rep
 
 **T3/T4** — structured workflow:
 1. `@repo-explorer` if unfamiliar
-2. `@planner` if ordering/tradeoffs unclear (else plan yourself); use approved `plans/` when present
+2. `@spec-plan` to validate specs/plans at lifecycle handoffs; use approved `plans/` when present
 3. `@architect` only for real boundary decisions
 4. Route implementation to `swe-build` with domain skills
 5. `@test-engineer` when coverage design matters

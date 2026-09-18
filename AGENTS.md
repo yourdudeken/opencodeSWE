@@ -25,7 +25,7 @@ Quality bar: [docs/SWE-STANDARD.md](docs/SWE-STANDARD.md) (Definition of Done, r
 | `spec-writer` | subagent | Full Markdown specs under `specs/` |
 | `plan-writer` | subagent | Full Markdown plans under `plans/` from approved specs |
 | `repo-explorer` | subagent | Repository mental model |
-| `planner` | subagent | Lightweight in-session implementation plans |
+| `spec-plan` | subagent | Validates specs and plans between lifecycle phases |
 | `debugger` | subagent | Reproduce → root cause → fix |
 | `test-engineer` | subagent | Tests that protect behavior |
 | `code-reviewer` | subagent | Adversarial review |
