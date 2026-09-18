@@ -11,13 +11,13 @@
 Install the latest release directly into the current project:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourdudeken/opencodeSWE/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/yourdudeken/opencodeSWE/main/scripts/install.sh | bash
 ```
 
 Update an existing installation:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourdudeken/opencodeSWE/main/update.sh | bash
+curl -fsSL https://raw.githubusercontent.com/yourdudeken/opencodeSWE/main/scripts/update.sh | bash
 ```
 
 Both commands operate on the current directory by default. They download the
