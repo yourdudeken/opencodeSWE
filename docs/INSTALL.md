@@ -8,6 +8,23 @@
 
 ## Project install (recommended)
 
+Install the latest release directly into the current project:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/yourdudeken/opencodeSWE/main/install.sh | bash
+```
+
+Update an existing installation:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/yourdudeken/opencodeSWE/main/update.sh | bash
+```
+
+Both commands operate on the current directory by default. They download the
+latest release archive and manage only `opencode.jsonc`, `AGENTS.md`, and
+`.opencode/`; all other files in the project are preserved. Set
+`OPENCODE_SWE_TARGET=/path/to/project` to select another target directory.
+
 From this repository:
 
 ```bash

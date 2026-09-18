@@ -43,7 +43,26 @@ Scoped bugs/features can still use `swe` directly without durable specs.
 
 ## Install
 
-### Option A — Use this repo as your project config
+### Option A — Install the latest release into the current project
+
+From the root of the project where OpenCode SWE should be installed:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/yourdudeken/opencodeSWE/main/install.sh | bash
+```
+
+To update an existing installation to the latest release:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/yourdudeken/opencodeSWE/main/update.sh | bash
+```
+
+The scripts download the latest GitHub release and copy only `opencode.jsonc`,
+`AGENTS.md`, and `.opencode/` into the current directory. They do not remove or
+modify any other project files. Existing copies of those three managed paths are
+replaced on update.
+
+### Option B — Use this repo as your project config
 
 ```bash
 git clone <this-repo> my-swe-opencode
@@ -56,7 +75,7 @@ opencode
 
 Tab to `swe` or `swe-plan`, then work as usual. Mention specialists with `@debugger`, `@spec-writer`, etc.
 
-### Option B — Global install (all projects)
+### Option C — Global install (all projects)
 
 ```bash
 cp -a .opencode/agents/* ~/.config/opencode/agents/
@@ -65,7 +84,7 @@ cp -a .opencode/commands/* ~/.config/opencode/commands/
 # Merge instructions into ~/.config/opencode/opencode.jsonc — see docs/INSTALL.md
 ```
 
-### Option C — Drop-in `.opencode` only
+### Option D — Drop-in `.opencode` only
 
 If the target project already has `opencode.json`, copy `.opencode/` into the project root and set:
 
