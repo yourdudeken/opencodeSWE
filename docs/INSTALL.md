@@ -113,6 +113,9 @@ opencode run --agent swe "/swe-build"
 
 Interrupt mid-run with **Esc**, or `/swe-interrupt` then later `/swe-resume`.
 
+For the command reference and the complete Spec → Plan → Build workflow, see
+[Usage](USAGE.md).
+
 ## Model tips
 
 Pin stronger models on `swe`, `swe-plan`, `debugger`, and `code-reviewer` if desired — in each agent markdown frontmatter:
