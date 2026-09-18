@@ -22,7 +22,11 @@ curl -fsSL https://raw.githubusercontent.com/yourdudeken/opencodeSWE/main/script
 
 Both commands operate on the current directory by default. They download the
 latest release archive and manage only `opencode.jsonc`, `AGENTS.md`, and
-`.opencode/`; all other files in the project are preserved. Set
+`.opencode/`; all other files in the project are preserved. Existing
+`opencode.json`/`opencode.jsonc` and `AGENTS.md` files are never overwritten;
+the pack config is saved as `opencode.swe.jsonc` for manual merging when those
+files already exist. Existing
+`.opencode/` files are preserved and pack files are updated in place. Set
 `OPENCODE_SWE_TARGET=/path/to/project` to select another target directory.
 
 From this repository:

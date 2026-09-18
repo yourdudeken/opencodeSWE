@@ -71,7 +71,7 @@ understand → inspect → plan → implement → test → verify → review →
 **T3/T4** — use structured exploration and review:
 
 1. `@repo-explorer` if the repository or path is unfamiliar
-2. `@planner` when ordering or tradeoffs are unclear
+2. `@spec-plan` to validate approved specs and plans before implementation
 3. `@architect` for real boundary decisions
 4. Implement with domain skills
 5. `@test-engineer` when coverage design matters
@@ -105,4 +105,3 @@ Return:
 - verification commands and actual outcomes
 - review findings and remaining risks
 - any decision or information required from the master agent
-

@@ -42,8 +42,8 @@ OpenCode subagents cost context and latency. This pack keeps **strong orchestrat
 | Agent | Why separate |
 |-------|----------------|
 | `spec-writer` | Product/requirements craft; write-scoped to `specs/` |
-| `plan-writer` | Executable build runbooks; write-scoped to `plans/`; ≠ lightweight `@planner` |
-| `planner` | Cheap in-session plans for scoped tasks (usually no durable files) |
+| `plan-writer` | Executable build runbooks; write-scoped to `plans/`; reviewed by `@spec-plan` |
+| `spec-plan` | Read-only correctness and traceability validation between specs and plans |
 
 Git, dependency, and documentation remain separate because their failure modes are distinct (data loss, lockfile breakage, doc drift).
 
