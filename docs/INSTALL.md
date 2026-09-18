@@ -87,7 +87,7 @@ Prefer copying `instructions/` into `~/.config/opencode/instructions/` so paths 
 opencode agent list
 ```
 
-You should see primaries `swe` and `swe-plan`, plus subagents such as `spec-writer`, `plan-writer`, `debugger`, `code-reviewer`, `repo-explorer`, etc.
+You should see primaries `swe`, `swe-build`, and `swe-plan`, plus subagents such as `spec-writer`, `plan-writer`, `debugger`, `code-reviewer`, `repo-explorer`, etc.
 
 In a session, skills appear via the `skill` tool (`repository-mapping`, `verification-loop`, …). Slash commands appear as `/swe-fix`, `/swe-feature`, …
 
@@ -95,7 +95,8 @@ In a session, skills appear via the `skill` tool (`repository-mapping`, `verific
 
 | Goal | Agent |
 |------|-------|
-| SWE build / fix / verify (default) | `swe` |
+| SWE master orchestration (default) | `swe` |
+| SWE build / fix / verify | `swe-build` |
 | Specs + plans + human gates | `swe-plan` |
 | Stock OpenCode builder | `build` (Tab to switch) |
 | Stock read-only plan | `plan` (prefer `swe-plan` for durable specs/plans) |
@@ -108,7 +109,7 @@ In a session, skills appear via the `skill` tool (`repository-mapping`, `verific
 opencode run --agent swe-plan "Your product prompt — produce specs for review"
 
 # After you approve specs and plans:
-opencode run --agent swe "/swe-build"
+opencode run --agent swe-build "/swe-build"
 ```
 
 Interrupt mid-run with **Esc**, or `/swe-interrupt` then later `/swe-resume`.
@@ -118,7 +119,7 @@ For the command reference and the complete Spec → Plan → Build workflow, see
 
 ## Model tips
 
-Pin stronger models on `swe`, `swe-plan`, `debugger`, and `code-reviewer` if desired — in each agent markdown frontmatter:
+Pin stronger models on `swe`, `swe-build`, `swe-plan`, `debugger`, and `code-reviewer` if desired — in each agent markdown frontmatter:
 
 ```yaml
 model: anthropic/claude-sonnet-4-20250514
@@ -128,4 +129,4 @@ Or override in `opencode.jsonc` under `agent.<name>.model`.
 
 ## Uninstall
 
-Remove the copied `.opencode/agents/swe.md` (and other agents you added), skills, commands, and revert `default_agent`.
+Remove the copied `.opencode/agents/swe.md`, `.opencode/agents/swe-build.md` (and other agents you added), skills, commands, and revert `default_agent`.

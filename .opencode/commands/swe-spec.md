@@ -14,6 +14,6 @@ Follow the Spec→Plan→Build lifecycle in **plan mode** only:
 3. Self-review specs → `human-review-gate` → **STOP** for developer (`approve` | `changes:` | `reject:`).
 4. Only after specs `approved`: `@plan-writer` + `plan-authoring` → create/update `plans/`.
 5. Self-review plans → `human-review-gate` → **STOP** again.
-6. When plans `approved`, hand off: switch to `swe` and `/swe-build`. Do not implement yourself.
+6. When plans `approved`, hand off: switch to `swe-build` and `/swe-build`. Do not implement yourself.
 
 Honor `/swe-interrupt` semantics if asked to stop; checkpoint PROGRESS.

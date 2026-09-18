@@ -24,7 +24,8 @@ Prompt → specs/ → self-review → human gate → plans/ → self-review → 
 
 - Artifacts live at the **project root** as Markdown (`specs/`, `plans/`).
 - Plan mode primary: `swe-plan` (cannot write app code).
-- Build mode primary: `swe` (executes `plans/08-build-checklist.md` via `build-from-spec`).
+- Master primary: `swe` (oversees the full workflow).
+- Build mode primary: `swe-build` (executes `plans/08-build-checklist.md` via `build-from-spec`).
 - Interrupt anytime: Esc or `/swe-interrupt`; resume with `/swe-resume`.
 
 Skip durable specs for clear T0/T1 local work.
@@ -65,7 +66,8 @@ Bugs, features, refactors, tests, deps/API changes, exploration, architecture tr
 
 | Need | Primary mechanism |
 |------|-------------------|
-| Build orchestration | agent `swe` |
+| Master orchestration | agent `swe` |
+| Build implementation | agent `swe-build` |
 | Spec/plan orchestration + human gates | agent `swe-plan` |
 | Durable specs / plans | `@spec-writer`, `@plan-writer` + skills |
 | Explore / plan / debug / test / review | specialist subagents |
